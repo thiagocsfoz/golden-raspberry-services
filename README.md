@@ -94,13 +94,13 @@ This will start the application using the default `prod` profile. For a real pro
 
 ## Interacting with the API
 
-- **Endpoint:** `GET http://localhost:8080/producers/award-intervals`
+- **Endpoint:** `GET http://localhost:8080/api/v1/producers/award-intervals`
 - **Header Required:** `X-API-KEY: <your-secret-key>`
 
 **Example `cURL` command:**
 
 ```bash
-curl --location 'http://localhost:8080/producers/award-intervals' \
+curl --location 'http://localhost:8080/api/v1/producers/award-intervals' \
 --header 'X-API-KEY: my-secret-key'
 ```
 

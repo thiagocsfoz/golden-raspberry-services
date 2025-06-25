@@ -11,7 +11,7 @@ import jakarta.ws.rs.core.MediaType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Path("/producers")
+@Path("/v1/producers")
 public class ProducerResource {
 
     private static final Logger LOG = LoggerFactory.getLogger(ProducerResource.class);
