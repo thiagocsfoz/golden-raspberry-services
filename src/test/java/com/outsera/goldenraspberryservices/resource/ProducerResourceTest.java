@@ -39,7 +39,7 @@ public class ProducerResourceTest {
         testDataSetup.setupWinningMovie(2018, "Single Win Movie", List.of("Single Win Producer"));
 
         given()
-                .when().get("/producers/award-intervals")
+                .when().get("/api/v1/producers/award-intervals")
                 .then()
                 .statusCode(200)
                 .body("min", hasSize(1))
@@ -66,7 +66,7 @@ public class ProducerResourceTest {
         testDataSetup.setupWinningMovie(2020, "Movie C2", List.of("Producer C")); // Intervalo 20 (max)
 
         given()
-                .when().get("/producers/award-intervals")
+                .when().get("/api/v1/producers/award-intervals")
                 .then()
                 .statusCode(200)
                 .body("min", hasSize(2))
@@ -81,7 +81,7 @@ public class ProducerResourceTest {
         testDataSetup.setupWinningMovie(2010, "Movie B", List.of("Producer B"));
 
         given()
-                .when().get("/producers/award-intervals")
+                .when().get("/api/v1/producers/award-intervals")
                 .then()
                 .statusCode(200)
                 .body("min", hasSize(0))

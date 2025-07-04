@@ -14,12 +14,6 @@ Based on the project's `pom.xml`, the main technologies and versions are:
 * **REST-assured**: `5.5.0` (for testing)
 * **JaCoCo**: `0.8.12` (for code coverage)
 
-## Security
-
-The API is protected by a fixed API Key. All requests to any endpoint must include the `X-API-KEY` header with the secret key configured for the environment.
-
-If the key is missing or invalid, the API will respond with a `401 Unauthorized` error.
-
 ## Data Source (CSV File)
 
 On startup, the application loads movie data from a CSV file.
@@ -47,9 +41,6 @@ The application uses a `.env` file at the project root to manage environment-spe
 **Example `.env` file:**
 
 ```
-# Security Configuration
-API_SECRET_KEY=my-secret-key
-
 # Data File Configuration
 CSV_FILE_NAME=movielist.csv
 
@@ -95,13 +86,11 @@ This will start the application using the default `prod` profile. For a real pro
 ## Interacting with the API
 
 - **Endpoint:** `GET http://localhost:8080/api/v1/producers/award-intervals`
-- **Header Required:** `X-API-KEY: <your-secret-key>`
 
 **Example `cURL` command:**
 
 ```bash
-curl --location 'http://localhost:8080/api/v1/producers/award-intervals' \
---header 'X-API-KEY: my-secret-key'
+curl --location 'http://localhost:8080/api/v1/producers/award-intervals'
 ```
 
 ## Building and Testing
